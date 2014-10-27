@@ -15,7 +15,9 @@ tinysou-swift是一个 Cocoa Touch Framework，你可以直接使用， git clon
 * 使用Workspace：将library项目添加到Workspace, 为 App 添加依赖。具体用法如下：
 
 1. 创建 Workspace，用来管理我们的项目及其依赖的第三方库（已有Workspace的可以略过这一步），将App和library都加入同一工作目录中
+![Image text](https://github.com/wangyeming/tinysou-swift/blob/master/Pic/%E4%BB%8B%E7%BB%8D%E5%9B%BE%E7%89%871.png)
 2. 为 App 添加依赖。在你的App的 Genral 选项卡中，添加 Linked Frameworks and Libraries，选择 Workspace 中 TinySouClient的.framework文件。
+![Image text](https://github.com/wangyeming/tinysou-swift/blob/master/Pic/%E4%BB%8B%E7%BB%8D%E5%9B%BE%E7%89%872.png)
 3. 可以在 DemoApp 项目代码中  ``` import TinySouClinet ```来使用我们的库
 
 ## 如何在应用中进行微搜索
