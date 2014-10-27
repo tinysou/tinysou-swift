@@ -130,4 +130,8 @@ public class TinySouClient{
         return json
     }
     
+    public func test(function: AnyObject){
+        function
+    }
+    
 }
