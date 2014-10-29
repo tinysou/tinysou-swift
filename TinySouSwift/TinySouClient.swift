@@ -20,6 +20,8 @@ public class TinySouClient{
   private var per_page: Int = 10  //每页显示的页数
   private var json: JSON?  //json结果返回
   private var error_message: String?  //error信息
+  private var search_params: [String: AnyObject]!  //搜索请求的parmas
+  private var ac_params: [String: AnyObject]!  //自动补全请求的parmas
   
   //初始化函数
   public init(engine_key: String){
@@ -66,6 +68,26 @@ public class TinySouClient{
     return self.json!
   }
   
+  //设置请求参数
+  public func setSearchParams(params: [String: AnyObject]) {
+    search_params = params
+  }
+  
+  //获取请求参数
+  public func getSearchParams() -> [String: AnyObject] {
+    return search_params
+  }
+  
+  //设置自动补全参数
+  public func setAcParams(params: [String: AnyObject]) {
+    ac_params = params
+  }
+  
+  //获取自动补全参数
+  public func getAcParams() -> [String: AnyObject] {
+    return ac_params
+  }
+  
   //新建搜索request
   public func buildRequest(search_content: String) -> NSURLRequest {
     var url = NSURL(string: search_url)
@@ -80,8 +102,11 @@ public class TinySouClient{
     //设置header
     request.addValue("application/json", forHTTPHeaderField: "Content-Type")
     //设置body
-    var params = ["q": search_content, "c": "page", "page": String(self.page), "engine_key":self.engine_key, "per_page": String(self.per_page)] as Dictionary<String, String>
-    request.HTTPBody = NSJSONSerialization.dataWithJSONObject(params, options: nil, error: &err)
+    if search_params == nil {
+      search_params = ["q": search_content, "c": "page", "page": page, "engine_key": engine_key, "per_page": per_page]
+    }
+    setSearchParams(search_params)
+    request.HTTPBody = NSJSONSerialization.dataWithJSONObject(search_params, options: nil, error: &err)
     return request
   }
   
@@ -100,8 +125,11 @@ public class TinySouClient{
     request.addValue("application/json", forHTTPHeaderField: "Content-Type")
     var fetch_field: Array = ["title", "sections", "url", "updated_at"]
     //设置body
-    var params = ["q": search_content, "c": "page",  "engine_key": self.engine_key, "per_page": String(self.per_page), "fetch_fields": fetch_field] as Dictionary<String, AnyObject>
-    request.HTTPBody = NSJSONSerialization.dataWithJSONObject(params, options: nil, error: &err)
+    if ac_params == nil {
+      ac_params = ["q": search_content, "c": "page",  "engine_key": engine_key, "per_page": per_page, "fetch_fields": fetch_field] as [String: AnyObject]
+    }
+    setAcParams(ac_params)
+    request.HTTPBody = NSJSONSerialization.dataWithJSONObject(ac_params, options: nil, error: &err)
     return request
   }
   
