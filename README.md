@@ -35,7 +35,6 @@ tinysou-swift是一个 Cocoa Touch Framework，你可以直接使用， git clon
       var request = tinySouClient.buildRequest(search_content)
       //新建自动补全请求
       var ac_request = tinySouClient.buildAcRequest(search_content)
-      //...发送请求（略）
-      //处理响应结果 data为NSData类型的响应结果
-      var json = tinySouClient.handleResult(data)
+      //...发送请求（略）推荐采用NSURLSession
+      //...处理响应结果 (略) 推荐使用SwiftyJSON
 ```
