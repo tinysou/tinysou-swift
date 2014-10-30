@@ -88,7 +88,7 @@ tinysou-swift是一个 Cocoa Touch Framework，你可以直接使用， git clon
       TinySouClient *tinySouClient = [[TinySouClient alloc]initWithEngine_key: engine_key]; 
       //设置自动补全参数，省略则采用默认参数
       NSArray *fetch_fields = [[NSArray alloc] initWithObjects:@"title", @"sections", @"url", @"updated_at",nil];
-  NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys: search_content, @"q", @"page",@"c", engine_key, @"engine_key",@"0", @"page",@"10",@"per_page",fetch_fields, @"fetch_fields",nil];
+      NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys: search_content, @"q", @"page",@"c", engine_key, @"engine_key",@"0", @"page",@"10",@"per_page",fetch_fields, @"fetch_fields",nil];
   [tinySouClient setAcParams:params]
       //新建自动补全请求
       NSURLRequest *request = [tinySouClient buildAcRequest: search_content];
