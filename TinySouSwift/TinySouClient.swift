@@ -8,7 +8,6 @@
 //
 
 import Foundation
-import SwiftyJSON
 
 public class TinySouClient{
   private var engine_key: String!  //设置engine_key
@@ -18,7 +17,6 @@ public class TinySouClient{
   private var page: Int = 0  //显示的页数
   private var is_error: Bool = false  //状态判断
   private var per_page: Int = 10  //每页显示的页数
-  private var json: JSON?  //json结果返回
   private var error_message: String?  //error信息
   private var search_params: [String: AnyObject]!  //搜索请求的parmas
   private var ac_params: [String: AnyObject]!  //自动补全请求的parmas
@@ -63,11 +61,6 @@ public class TinySouClient{
     return self.is_error
   }
   
-  //获取搜索结果
-  public func getJson() ->JSON{
-    return self.json!
-  }
-  
   //设置请求参数
   public func setSearchParams(params: [String: AnyObject]) {
     search_params = params
@@ -95,8 +88,6 @@ public class TinySouClient{
     var request = NSMutableURLRequest(URL: url!)
     //设置请求方法
     request.HTTPMethod = self.method
-    //定义json数据
-    var json: JSON?
     //定义报错
     var err: NSError?
     //设置header
@@ -119,8 +110,6 @@ public class TinySouClient{
     request.HTTPMethod = self.method
     //定义报错
     var err: NSError?
-    //定义json数据
-    var json: JSON?
     //设置header
     request.addValue("application/json", forHTTPHeaderField: "Content-Type")
     var fetch_field: Array = ["title", "sections", "url", "updated_at"]
@@ -131,23 +120,6 @@ public class TinySouClient{
     setAcParams(ac_params)
     request.HTTPBody = NSJSONSerialization.dataWithJSONObject(ac_params, options: nil, error: &err)
     return request
-  }
-  
-  //响应数据处理
-  public func handleResult(data: NSData) ->JSON {
-    var strData = NSString(data: data, encoding: NSUTF8StringEncoding)
-    var err: NSError?
-    var jsonObj = NSJSONSerialization.JSONObjectWithData(data, options: .MutableLeaves, error: &err) as? NSDictionary
-    var json: JSON!
-    json = JSON(jsonObj!)
-    if( json == nil) {
-      self.is_error = true
-      self.error_message = "json数据解析失败"
-      println(self.error_message)
-    } else {
-      self.is_error = false
-    }
-    return json
   }
   
 }
