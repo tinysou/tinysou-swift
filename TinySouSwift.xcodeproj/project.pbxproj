@@ -11,7 +11,6 @@
 		35615CDD19FE2FC300F85D2D /* TinySouSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35615CD119FE2FC300F85D2D /* TinySouSwift.framework */; };
 		35615CE419FE2FC300F85D2D /* TinySouSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35615CE319FE2FC300F85D2D /* TinySouSwiftTests.swift */; };
 		35615CEE19FE2FDA00F85D2D /* TinySouClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35615CED19FE2FDA00F85D2D /* TinySouClient.swift */; };
-		35615CF219FE307900F85D2D /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35615CF119FE307900F85D2D /* SwiftyJSON.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +39,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35615CF219FE307900F85D2D /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +414,7 @@
 				35615CE919FE2FC300F85D2D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		35615CEA19FE2FC300F85D2D /* Build configuration list for PBXNativeTarget "TinySouSwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +423,7 @@
 				35615CEC19FE2FC300F85D2D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
