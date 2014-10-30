@@ -9,7 +9,7 @@
 
 import Foundation
 
-public class TinySouClient{
+@objc public class TinySouClient{
   private var engine_key: String!  //设置engine_key
   private var method: String = "POST"  //http请求方法
   private var search_url: String = "http://api.tinysou.com/v1/public/search"  //搜索url

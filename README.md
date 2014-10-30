@@ -25,14 +25,28 @@ tinysou-swift是一个 Cocoa Touch Framework，你可以直接使用， git clon
 ``` swift
       let engine_key: String = "示例key" 
 ```
-* 建立微搜索/自动补全请求
+* 建立微搜索
 ``` swift
       //初始化
       var tinySouClient = TinySouClient(engine_key: engine_key) 
       //设置搜索结果显示的页数
       tinySouClient.setPage(page)
       //新建搜索请求 search_content为待搜索内容
+      //设置搜索请求参数，省略则采用默认参数
+      var search_params = ["q": search_content, "c": "page", "page": page, "engine_key": EngineKey, "per_page": 10]           as [String: AnyObject]
+      tinySouClient.setSearchParams(search_params)
       var request = tinySouClient.buildRequest(search_content)
+      //...发送请求（略）推荐采用NSURLSession
+      //...处理响应结果 (略) 推荐使用SwiftyJSON
+```
+* 自动补全请求
+``` swift
+      //初始化
+      var tinySouClient = TinySouClient(engine_key: engine_key) 
+      //设置自动补全参数，省略则采用默认参数
+      var fetch_field: Array = ["title", "sections", "url", "updated_at"]
+      var ac_params = ["q": search_content, "c": "page", "engine_key": EngineKey, "per_page": 10, "fetch_fields":            fetch_field] as [String: AnyObject]
+      tinySouClient.setSearchParams(ac_params)
       //新建自动补全请求
       var ac_request = tinySouClient.buildAcRequest(search_content)
       //...发送请求（略）推荐采用NSURLSession

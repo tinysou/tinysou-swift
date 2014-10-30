@@ -31,7 +31,6 @@
 		35615CE219FE2FC300F85D2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35615CE319FE2FC300F85D2D /* TinySouSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinySouSwiftTests.swift; sourceTree = "<group>"; };
 		35615CED19FE2FDA00F85D2D /* TinySouClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinySouClient.swift; sourceTree = "<group>"; };
-		35615CF119FE307900F85D2D /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../../Library/Developer/Xcode/DerivedData/WorkspaceTest-fgkfcjukynupcwbaxfmpskkfotud/Build/Products/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +55,6 @@
 		35615CC719FE2FC300F85D2D = {
 			isa = PBXGroup;
 			children = (
-				35615CF119FE307900F85D2D /* SwiftyJSON.framework */,
 				35615CD319FE2FC300F85D2D /* TinySouSwift */,
 				35615CE019FE2FC300F85D2D /* TinySouSwiftTests */,
 				35615CD219FE2FC300F85D2D /* Products */,
