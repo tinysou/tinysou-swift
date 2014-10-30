@@ -1,5 +1,5 @@
 # tinysou-swift
-想要在项目中学习，查看demo
+想要在项目中学习，查看[demo](https://github.com/wangyeming/tinysou-ios-demo)
 
 ## 一 介绍
 微搜索ios-swift-library，通过调用public接口，实现新建微搜索请求、处理微搜索响应等功能。目前支持的接口有：
