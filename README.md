@@ -73,7 +73,7 @@ tinysou-swift是一个 Cocoa Touch Framework，你可以直接使用， git clon
       //初始化
       TinySouClient *tinySouClient = [[TinySouClient alloc]initWithEngine_key: engine_key]; 
       //设置搜索结果显示的页数
-      [tinySouClient setPage:0];
+      [tinySouClient setPage:1];
       //设置搜索请求参数，省略则采用默认参数
       NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys: search_content, @"q", @"page",@"c", engine_key, @"engine_key",@"2", @"page",@"10",@"per_page",nil];
       [tinySouClient setSearchParams:params];
