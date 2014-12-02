@@ -14,7 +14,7 @@ import Foundation
   private var method: String = "POST"  //http请求方法
   private var search_url: String = "http://api.tinysou.com/v1/public/search"  //搜索url
   private var ac_url: String = "http://api.tinysou.com/v1/public/autocomplete"  //自动补全url
-  private var page: Int = 0  //显示的页数
+  private var page: Int = 1  //显示的页数
   private var is_error: Bool = false  //状态判断
   private var per_page: Int = 10  //每页显示的页数
   private var error_message: String?  //error信息
